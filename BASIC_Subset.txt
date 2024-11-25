@@ -1,0 +1,20 @@
+<Program> -> <Code> end
+<Code> -> <Line><Code> | <Line>
+<Line> -> <INT_LIT> <Statement>
+<Statement> -> <For_Statement> | <Print_Statement> | <Next_Statement> | <Input_Statement>
+
+<For_Statement> -> for <Boolean_Expression> to <id> <Print_Statements> <Next_Statement>
+<Print_Statements> -> <Print_Statement> | <Print_Statement> <Print_Statements>
+<Print_Statement> -> print <id> | print <id>, <id> * <id> | print <String_Literal>
+<Next_Statement> -> next <id>
+<Input_statement> -> input <id>
+
+<Boolean_Expression> -> <id> = <Number>
+<String_Literal> -> " <id> "
+<id> -> Letter | Digit | <id><id>
+<INT_LIT> -> <Number>
+<Number> -> Digit | <Number>Digit
+
+Lexical Analyzer
+Letter -> [a-zA-Z]
+Digit -> [0-9]
